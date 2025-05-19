@@ -2,7 +2,7 @@
     "name": "Google-Chrome",
     "description": "Google Chrome web browser.",
     "version": "136.0.7103.113-1",
-    "image": "ghcr.io/containerpak/google-chrome:main",
+    "image": "ghcr.io/containerpak/chrome:main",
     "binaries": [
         "/usr/bin/google-chrome"
     ],
