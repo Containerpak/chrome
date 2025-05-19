@@ -1,0 +1,39 @@
+{
+    "name": "Google-Chrome",
+    "description": "Google Chrome web browser.",
+    "version": "136.0.7103.113-1",
+    "image": "ghcr.io/containerpak/google-chrome:main",
+    "binaries": [
+        "/usr/bin/google-chrome"
+    ],
+    "desktop_entries": [
+        "/usr/share/applications/com.google.Chrome.desktop"
+    ],
+    "dependencies": [],
+    "addons": [],
+    "idle_time": 0,
+    "override": {
+        "socketX11": true,
+        "socketWayland": true,
+        "socketPulseAudio": true,
+        "socketSessionBus": true,
+        "socketSystemBus": false,
+        "socketSshAgent": false,
+        "socketCups": true,
+        "socketGpgAgent": false,
+        "socketAtSpiBus": false,
+        "socketBluetooth": false,
+        "deviceAll": false,
+        "deviceShm": true,
+        "deviceVideo": true,
+        "notification": true,
+        "fsHost": false,
+        "fsHostHome": true,
+        "fsExtra": [],
+        "env": [],
+        "network": true,
+        "process": false,
+        "asRoot": false,
+        "allowedHostCommands": []
+    }
+}
