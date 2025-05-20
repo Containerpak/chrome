@@ -10,20 +10,17 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN wget -O chrome.deb \
-      "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable\
-/google-chrome-stable_${VERSION}_amd64.deb"
+      "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${VERSION}_amd64.deb"
 
 RUN dpkg-deb -x chrome.deb / && \
     rm chrome.deb
 
 # 2. RUNTIME
 FROM ghcr.io/containerpak/gtk:main
-COPY --from=builder /opt/google/chrome /usr/
+COPY --from=builder /opt/google/chrome /opt/google/chrome
 
-COPY chrome.sh /usr/bin/google-chrome
-
-RUN chmod +x /usr/bin/google-chrome && \
-    apt update && \
+RUN ln -s /opt/google/chrome/google-chrome /usr/bin/google-chrome
+RUN apt update && \
     apt install -y --no-install-recommends \
       libglib2.0-0 \
       libgtk-3-0 \
