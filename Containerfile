@@ -17,6 +17,7 @@ RUN dpkg-deb -x chrome.deb / && \
 
 # 2. RUNTIME
 
+FROM ghcr.io/containerpak/gtk:main AS runtime
 COPY --from=builder /opt/google/chrome /app
 COPY com.google.Chrome.desktop /usr/share/applications/com.google.Chrome.desktop
 COPY com.google.Chrome.svg /usr/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
