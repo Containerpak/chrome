@@ -17,10 +17,10 @@ RUN dpkg-deb -x chrome.deb / && \
 
 # 2. RUNTIME
 
-COPY --from=builder /opt/google/chrome /opt/google/chrome
+COPY --from=builder /opt/google/chrome /app
 COPY com.google.Chrome.desktop /usr/share/applications/com.google.Chrome.desktop
 COPY com.google.Chrome.svg /usr/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
-RUN ln -s /opt/google/chrome/google-chrome /usr/bin/google-chrome
+RUN ln -s /app/google-chrome /usr/bin/google-chrome
 RUN apt update && \
     apt install -y --no-install-recommends \
       libglib2.0-0 \
