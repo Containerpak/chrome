@@ -22,6 +22,7 @@ COPY --from=builder /opt/google/chrome /app
 COPY com.google.Chrome.desktop /usr/share/applications/com.google.Chrome.desktop
 COPY com.google.Chrome.svg /usr/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
 RUN ln -s /app/google-chrome /usr/bin/google-chrome
+RUN ln -s /app/google-chrome /usr/bin/chrome
 RUN apt update && \
     apt install -y --no-install-recommends \
       libglib2.0-0 \
@@ -47,5 +48,3 @@ RUN apt update && \
       libxtst6 \
       fonts-liberation && \
     cpak-clean-junk
-
-ENTRYPOINT ["/usr/bin/google-chrome"]
