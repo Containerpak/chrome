@@ -21,9 +21,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build the Docker image
-        run: docker image build -f Containerfile --tag ghcr.io/containerpak/chrome:main .
+        run: docker image build -f Containerfile --tag ghcr.io/containerpak/chrome-cpak:main .
 
       - name: Push to GHCR
         run: |
           docker login ghcr.io -u ${{ env.REGISTRY_USER }} -p ${{ env.REGISTRY_PASSWORD }}
-          docker image push ghcr.io/containerpak/chrome:main
+          docker image push ghcr.io/containerpak/chrome-cpak:main

@@ -1,5 +1,7 @@
 FROM ghcr.io/containerpak/gtk:main
 
+LABEL org.opencontainers.image.source="https://github.com/Containerpak/chrome"
+
 RUN apt update && \
     apt install -y --no-install-recommends \
       ca-certificates \

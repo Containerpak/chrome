@@ -3,7 +3,7 @@
     "description": "Google Chrome web browser.",
     "manifest_version": "1.0",
     "version": "151.0.7922.108-1",
-    "image": "ghcr.io/containerpak/chrome:main",
+    "image": "ghcr.io/containerpak/chrome-cpak:main",
     "binaries": [
         "/usr/bin/google-chrome"
     ],
