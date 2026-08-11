@@ -1,35 +1,17 @@
-# 1. BUILD
-FROM ghcr.io/containerpak/gtk-sdk:main AS builder
-ARG VERSION=136.0.7103.113-1
-WORKDIR /tmp
+FROM ghcr.io/containerpak/gtk:main
 
 RUN apt update && \
     apt install -y --no-install-recommends \
-      wget \
-      dpkg && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN wget -O chrome.deb \
-      "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${VERSION}_amd64.deb"
-
-RUN dpkg-deb -x chrome.deb / && \
-    rm chrome.deb
-
-# 2. RUNTIME
-
-FROM ghcr.io/containerpak/gtk:main AS runtime
-COPY --from=builder /opt/google/chrome /app
-COPY com.google.Chrome.desktop /usr/share/applications/com.google.Chrome.desktop
-COPY com.google.Chrome.svg /usr/share/icons/hicolor/scalable/apps/com.google.Chrome.svg
-RUN ln -s /app/google-chrome /usr/bin/google-chrome
-RUN ln -s /app/google-chrome /usr/bin/chrome
-RUN apt update && \
-    apt install -y --no-install-recommends \
+      ca-certificates \
+      dpkg \
+      fonts-liberation \
+      libasound2 \
+      libatk-bridge2.0-0 \
       libglib2.0-0 \
       libgtk-3-0 \
+      libnspr4 \
       libnss3 \
       libxss1 \
-      libasound2t64 \
       libx11-xcb1 \
       libxcb1 \
       libatk1.0-0 \
@@ -46,5 +28,5 @@ RUN apt update && \
       libxdamage1 \
       libxrandr2 \
       libxtst6 \
-      fonts-liberation && \
+      xdg-utils && \
     cpak-clean-junk
