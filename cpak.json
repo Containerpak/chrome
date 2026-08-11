@@ -28,13 +28,15 @@
         "deviceShm": true,
         "deviceVideo": true,
         "notification": true,
+        "openURI": true,
         "filesystem": [
             {"path": "home", "access": "read-write"}
         ],
         "env": [],
         "network": true,
         "process": false,
+        "userNamespaces": true,
         "asRoot": false,
-        "allowedHostCommands": ["xdg-open"]
+        "allowedHostCommands": []
     }
 }
