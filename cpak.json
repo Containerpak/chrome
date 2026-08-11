@@ -1,7 +1,7 @@
 {
     "name": "Google-Chrome",
     "description": "Google Chrome web browser.",
-    "manifest_version": "1.0",
+    "manifest_version": "2.0",
     "version": "151.0.7922.108-1",
     "image": "ghcr.io/containerpak/chrome-cpak:main",
     "binaries": [
@@ -34,7 +34,7 @@
         "network": true,
         "process": false,
         "asRoot": false,
-        "allowedHostCommands": []
+        "allowedHostCommands": ["xdg-open"]
     },
     "runtime_sources": [
         {
