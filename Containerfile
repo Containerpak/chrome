@@ -5,7 +5,7 @@ RUN apt update && \
       ca-certificates \
       dpkg \
       fonts-liberation \
-      libasound2 \
+      libasound2t64 \
       libatk-bridge2.0-0 \
       libglib2.0-0 \
       libgtk-3-0 \
@@ -22,7 +22,6 @@ RUN apt update && \
       libpango-1.0-0 \
       libpangocairo-1.0-0 \
       libstdc++6 \
-      libu2f-udev \
       libvulkan1 \
       libxcomposite1 \
       libxdamage1 \
