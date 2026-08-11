@@ -27,9 +27,9 @@
         "deviceShm": true,
         "deviceVideo": true,
         "notification": true,
-        "fsHost": false,
-        "fsHostHome": true,
-        "fsExtra": [],
+        "filesystem": [
+            {"path": "home", "access": "read-write"}
+        ],
         "env": [],
         "network": true,
         "process": false,
