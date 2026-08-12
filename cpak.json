@@ -22,7 +22,7 @@
         "socketCups": true,
         "socketGpgAgent": false,
         "socketAtSpiBus": false,
-        "socketBluetooth": false,
+        "socketBluetooth": true,
         "deviceDri": true,
         "deviceAll": false,
         "deviceShm": true,
