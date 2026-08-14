@@ -16,5 +16,7 @@ COPY --from=chrome-source /tmp/google-chrome.deb /tmp/google-chrome.deb
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends /tmp/google-chrome.deb && \
+    sed -i 's|/usr/bin/google-chrome-stable|/usr/local/bin/cpak chromium-launch --user-data-dir ~/.config/google-chrome --executable /usr/bin/google-chrome-stable --|g' \
+      /usr/share/applications/google-chrome.desktop && \
     rm /tmp/google-chrome.deb && \
     cpak-clean-junk
