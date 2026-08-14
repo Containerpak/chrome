@@ -8,15 +8,13 @@ RUN apt-get update && \
       https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     echo "${CHROME_SHA256}  /tmp/google-chrome.deb" | sha256sum --check -
 
-FROM ghcr.io/containerpak/gtk:main
+FROM ghcr.io/containerpak/gtk3:main
 
 LABEL org.opencontainers.image.source="https://github.com/Containerpak/chrome"
 
-COPY --from=chrome-source /tmp/google-chrome.deb /tmp/google-chrome.deb
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends /tmp/google-chrome.deb && \
+RUN --mount=type=bind,from=chrome-source,source=/tmp/google-chrome.deb,target=/run/google-chrome.deb \
+    apt-get update && \
+    apt-get install -y /run/google-chrome.deb && \
     sed -i 's|/usr/bin/google-chrome-stable|/usr/local/bin/cpak chromium-launch --user-data-dir ~/.config/google-chrome --executable /usr/bin/google-chrome-stable --|g' \
       /usr/share/applications/google-chrome.desktop && \
-    rm /tmp/google-chrome.deb && \
     cpak-clean-junk
