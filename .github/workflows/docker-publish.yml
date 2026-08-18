@@ -70,10 +70,11 @@ jobs:
           CPAK_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           repository="$(printf '%s' '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')"
+          image="ghcr.io/containerpak/chrome-cpak"
           cpak-sign state \
             --origin "github.com/${repository}" \
-            --image "ghcr.io/${repository}:main" \
+            --image "${image}:main" \
             --generation "${{ github.run_number }}"
           cosign sign-blob --yes --new-bundle-format=true \
             --bundle cpak-state.sigstore.json cpak-state
-          cpak-sign attach --image "ghcr.io/${repository}"
+          cpak-sign attach --image "${image}"
