@@ -3,7 +3,7 @@
     "name": "Google-Chrome",
     "description": "Google Chrome web browser.",
     "manifest_version": "2.0",
-    "version": "151.0.7922.169-1",
+    "version": "151.0.7922.173-1",
     "image": "ghcr.io/containerpak/chrome-cpak:main",
     "binaries": [
         "/usr/bin/google-chrome"
@@ -41,10 +41,10 @@
     },
     "runtime_sources": [
         {
-            "name": "google-chrome-stable_151.0.7922.169-1_amd64.deb",
-            "url": "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_151.0.7922.169-1_amd64.deb",
-            "sha256": "6572478310553cb25fdcb4ba2fb5459b472c2c765f5f68e9837d4964e8a87f1e",
-            "size": 140188716,
+            "name": "google-chrome-stable_151.0.7922.173-1_amd64.deb",
+            "url": "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_151.0.7922.173-1_amd64.deb",
+            "sha256": "878e5ab495b8a694980fca61bc09b37e651ccedce2291c73434d16e48a2646fd",
+            "size": 140077524,
             "installer": "dpkg"
         }
     ]
