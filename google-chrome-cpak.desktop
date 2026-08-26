@@ -3,7 +3,7 @@ Version=1.0
 Name=Google Chrome
 GenericName=Web Browser
 Comment=Access the Internet
-Exec=/usr/local/bin/cpak chromium-launch --user-data-dir ~/.config/google-chrome --executable /usr/bin/google-chrome-stable -- %U
+Exec=/usr/local/bin/cpak chromium-launch --user-data-dir "~/.config/google-chrome" --executable /usr/bin/google-chrome-stable -- %U
 StartupNotify=true
 Terminal=false
 Icon=google-chrome
@@ -14,8 +14,8 @@ Actions=new-window;new-private-window;
 
 [Desktop Action new-window]
 Name=New Window
-Exec=/usr/local/bin/cpak chromium-launch --user-data-dir ~/.config/google-chrome --executable /usr/bin/google-chrome-stable -- --new-window
+Exec=/usr/local/bin/cpak chromium-launch --user-data-dir "~/.config/google-chrome" --executable /usr/bin/google-chrome-stable -- --new-window
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
-Exec=/usr/local/bin/cpak chromium-launch --user-data-dir ~/.config/google-chrome --executable /usr/bin/google-chrome-stable -- --incognito
+Exec=/usr/local/bin/cpak chromium-launch --user-data-dir "~/.config/google-chrome" --executable /usr/bin/google-chrome-stable -- --incognito
