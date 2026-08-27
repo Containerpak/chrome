@@ -1,51 +1,50 @@
 {
-    "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v2.json",
-    "name": "Google-Chrome",
-    "description": "Google Chrome web browser.",
-    "manifest_version": "2.0",
-    "version": "152.0.7977.64-1",
-    "image": "ghcr.io/containerpak/chrome-cpak:main",
-    "binaries": [
-        "/usr/bin/google-chrome"
+  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v3.json",
+  "manifest_version": "3.0",
+  "name": "Google-Chrome",
+  "description": "Google Chrome web browser.",
+  "version": "152.0.7977.64-1",
+  "image": "ghcr.io/containerpak/chrome-cpak@sha256:1804350f3bde2bc46b5da6b42085037810708c4bf4338c9ef7e4f314f65a382e",
+  "binaries": [
+    "/usr/bin/google-chrome"
+  ],
+  "desktop_entries": [
+    "/usr/share/applications/google-chrome-cpak.desktop"
+  ],
+  "dependencies": [],
+  "addons": [],
+  "idle_time": 0,
+  "override": {
+    "socketWayland": true,
+    "socketPulseAudio": true,
+    "socketSshAgent": false,
+    "socketCups": true,
+    "socketGpgAgent": false,
+    "deviceDri": true,
+    "deviceAll": false,
+    "deviceShm": true,
+    "deviceVideo": true,
+    "notification": true,
+    "openURI": true,
+    "filesystem": [
+      {
+        "path": "home",
+        "access": "read-write"
+      }
     ],
-    "desktop_entries": ["/usr/share/applications/google-chrome-cpak.desktop"],
-    "dependencies": [],
-    "addons": [],
-    "idle_time": 0,
-    "override": {
-        "socketX11": true,
-        "socketWayland": true,
-        "socketPulseAudio": true,
-        "socketSessionBus": true,
-        "socketSystemBus": false,
-        "socketSshAgent": false,
-        "socketCups": true,
-        "socketGpgAgent": false,
-        "socketAtSpiBus": false,
-        "socketBluetooth": true,
-        "deviceDri": true,
-        "deviceAll": false,
-        "deviceShm": true,
-        "deviceVideo": true,
-        "notification": true,
-        "openURI": true,
-        "filesystem": [
-            {"path": "home", "access": "read-write"}
-        ],
-        "env": [],
-        "network": true,
-        "process": false,
-        "userNamespaces": true,
-        "asRoot": false,
-        "allowedHostCommands": []
-    },
-    "runtime_sources": [
-        {
-            "name": "google-chrome-stable_152.0.7977.64-1_amd64.deb",
-            "url": "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_152.0.7977.64-1_amd64.deb",
-            "sha256": "4eae0736a812d9bc851cd2937f7af00e47dbaf8305845eed452703ff009873c7",
-            "size": 140878652,
-            "installer": "dpkg"
-        }
-    ]
+    "env": [],
+    "network": true,
+    "process": false,
+    "userNamespaces": true,
+    "asRoot": false
+  },
+  "runtime_sources": [
+    {
+      "name": "google-chrome-stable_152.0.7977.64-1_amd64.deb",
+      "url": "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_152.0.7977.64-1_amd64.deb",
+      "sha256": "4eae0736a812d9bc851cd2937f7af00e47dbaf8305845eed452703ff009873c7",
+      "size": 140878652,
+      "installer": "dpkg"
+    }
+  ]
 }
