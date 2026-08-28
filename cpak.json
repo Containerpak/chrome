@@ -15,11 +15,13 @@
   "addons": [],
   "idle_time": 0,
   "override": {
+    "displayX11": true,
     "socketWayland": true,
     "socketPulseAudio": true,
     "socketSshAgent": false,
     "socketCups": true,
     "socketGpgAgent": false,
+    "bluetooth": true,
     "deviceDri": true,
     "deviceAll": false,
     "deviceShm": true,
