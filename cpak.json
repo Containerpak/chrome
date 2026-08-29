@@ -36,6 +36,7 @@
     ],
     "env": [],
     "network": true,
+    "hostNetwork": true,
     "process": false,
     "userNamespaces": true,
     "asRoot": false
