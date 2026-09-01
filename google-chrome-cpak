@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -- --disable-background-mode "$@"
+if [ -n "${WAYLAND_DISPLAY:-}" ]; then
+    set -- --ozone-platform=wayland "$@"
+fi
+
+exec /usr/local/bin/cpak chromium-launch \
+    --user-data-dir "$HOME/.config/google-chrome" \
+    --executable /usr/bin/google-chrome-stable \
+    -- "$@"

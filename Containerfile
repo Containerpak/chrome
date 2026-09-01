@@ -3,6 +3,7 @@ FROM ghcr.io/containerpak/gtk3:main
 LABEL org.opencontainers.image.source="https://github.com/Containerpak/chrome"
 
 COPY google-chrome-cpak.desktop /usr/share/applications/google-chrome-cpak.desktop
+COPY google-chrome-cpak /usr/local/bin/google-chrome
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
