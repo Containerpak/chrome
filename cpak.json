@@ -16,6 +16,10 @@
   "idle_time": 1,
   "override": {
     "displayX11": true,
+    "clipboard": {
+      "hostToApp": true,
+      "appToHost": true
+    },
     "socketWayland": true,
     "socketPulseAudio": true,
     "socketSshAgent": false,
