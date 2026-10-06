@@ -4,7 +4,7 @@
   "name": "Google-Chrome",
   "description": "Google Chrome web browser.",
   "version": "153.0.8010.36-1",
-  "image": "ghcr.io/containerpak/chrome-cpak@sha256:15a41ced0ec2f6ec29fa1008f6a556f0f4ff053f03d5dd92f784a7f7cef507eb",
+  "image": "ghcr.io/containerpak/chrome-cpak@sha256:3a5fdd6ec1547cf4dde699e80f4ae27c5cd5c147a06da5923cf4f583a985204b",
   "binaries": [
     "/usr/local/bin/google-chrome"
   ],
